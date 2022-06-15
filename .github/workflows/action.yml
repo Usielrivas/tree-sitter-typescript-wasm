@@ -19,7 +19,6 @@ jobs:
         run: |
           npm install --save-dev tree-sitter-cli tree-sitter-javascript
           npx tree-sitter build-wasm node_modules/tree-sitter-javascript
-          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
