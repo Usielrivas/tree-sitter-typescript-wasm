@@ -40,4 +40,5 @@ jobs:
           git status
           git add .
           git commit -m "deploy wasm to last version"
+          git push
 
