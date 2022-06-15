@@ -30,13 +30,12 @@ jobs:
           git status
 
       - name: generate wasm
-        run: npx tree-sitter build-wasm node_modules/tree-sitter-typescript
+        run: npx tree-sitter build-wasm node_modules/tree-sitter-typescript/tsx
+        run: npx tree-sitter build-wasm node_modules/tree-sitter-typescript/typescript
 
       - name: view
         run: ls
+        run: git status
+        run: git add .
+        run: git commit -m "deploy wasm to last version"
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: wasm # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
