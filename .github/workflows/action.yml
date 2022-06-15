@@ -30,12 +30,14 @@ jobs:
           git status
 
       - name: generate wasm
-        run: npx tree-sitter build-wasm node_modules/tree-sitter-typescript/tsx
-        run: npx tree-sitter build-wasm node_modules/tree-sitter-typescript/typescript
+        run: | 
+          npx tree-sitter build-wasm node_modules/tree-sitter-typescript/typescript
+          npx tree-sitter build-wasm node_modules/tree-sitter-typescript/tsx
 
       - name: view
-        run: ls
-        run: git status
-        run: git add .
-        run: git commit -m "deploy wasm to last version"
+        run: |
+          ls
+          git status
+          git add .
+          git commit -m "deploy wasm to last version"
 
