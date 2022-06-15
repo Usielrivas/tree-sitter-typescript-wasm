@@ -20,8 +20,11 @@ jobs:
           npm install --save-dev tree-sitter-cli
           cd node_modules
           git clone https://github.com/tree-sitter/tree-sitter-typescript
-          cd ../ 
+          cd tree-sitter-typescript
+          npm install
+          cd ../../
           ls
+          git status
 
       - name: generate wasm
         run: npx tree-sitter build-wasm node_modules/tree-sitter-typescript
