@@ -21,6 +21,9 @@ jobs:
       - name: generate wasm
         run: npx tree-sitter build-wasm node_modules/tree-sitter-javascript
 
+      - name: view
+        run: ls
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
